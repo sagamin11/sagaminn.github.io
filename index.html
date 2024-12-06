@@ -1,329 +1,252 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ゆるスポーツ「わなげ✖️まるばつゲーム」</title>
-    <style>
-        
-        /* 全体スタイル */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #fffaf0;
-            color: #333;
-            line-height: 1.8;
-        }
-        header {
-            background: linear-gradient(45deg, #ffa07a, #ff6347);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 5px solid #ff4500;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        header p {
-            font-size: 1.2rem;
-            margin-top: 15px;
-        }
-        header .nickname {
-            font-size: 1.5rem;
-            margin-top: 10px;
-            font-style: italic;
-            color: #ffd700;
-        }
-        nav {
-            background: #ff4500;
-            padding: 15px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #ffd700;
-        }
-        .container {
-            padding: 20px;
-            max-width: 1000px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        section h2 {
-            font-size: 2rem;
-            color: #ff4500;
-            border-left: 8px solid #ff6347;
-            padding-left: 10px;
-            margin-bottom: 15px;
-        }
-        section p, section ul {
-            font-size: 1.1rem;
-            color: #444;
-        }
-        ul {
-            list-style-type: circle;
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .gallery img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 10px;
-            border: 3px solid #ffdab9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .gallery p {
-            color: #999;
-            font-size: 1rem;
-            text-align: center;
-            margin-top: 10px;
-        }
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #ff4500;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-        }
-        .button:hover {
-            background: #ff6347;
-        }
-        footer {
-            background: linear-gradient(45deg, #ff6347, #ffa07a);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            margin-top: 20px;
-        }
-        footer a {
-            color: #fffacd;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <title>ワークシート</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background-color: #333;
+      color: #f4f7fc;
+    }
+
+    #controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    #toggle-dark-mode {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    #toggle-dark-mode:hover {
+      background-color: #0056b3;
+    }
+
+    #worksheet-links {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .day-section {
+      margin-bottom: 40px;
+    }
+
+    .day-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .worksheet-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    body.dark-mode .worksheet-card {
+      background-color: #444;
+      color: white;
+    }
+
+    .worksheet-card a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .highlight {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .extra-section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: #e6f7ff;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .extra-section .extra-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>ゆるスポーツ「わなげ✖️まるばつゲーム」</h1>
-        <p class="nickname">通称「ワナナナゲ」</p>
-        <p>みんなで楽しく遊べる、新しい遊びのカタチ！</p>
-    </header>
-    <nav>
-        <a href="#about">概要</a>
-        <a href="#arai">魅力</a>
-        <a href="#rules">ルール</a>
-        <a href="#gallery">ギャラリー</a>
-    </nav>
-    <div class="container">
-        <section id="about">
-            <h2>ワナナナゲの概要</h2>
-            <p>
-                <strong>「ワナナナゲ」</strong>は、伝統的な遊び「輪投げ」に戦略性を加えた新感覚スポーツ！
-                勝ち負けにこだわらず、笑顔が広がる瞬間を楽しむことが目的です。
-            </p>
-            <p>
-                相模原橋本キャンパスのグループCチームが考案した、輪投げ✖️まるばつゲームを融合したとっても面白いゲーム！  
-                チームで協力して頭を使い有利に戦って、勝利を掴み取ろう！
-            </p>
-            <p>簡単なルールと用具で、誰でもすぐに始められるこのスポーツは、親子や友達同士で遊ぶのにぴったり！</p>
-        </section>
-        
-        <section id="arai">
-            <h2>ワナナナゲの魅力</h2>
-            <p>
-                1:運動が苦手な人でも楽しく遊べるスポーツ！
-            </p>
-            2:誰でも簡単に作れて遊ぶことができる！
-        </p>
-        3:ルールがシンプルで分かりやすい！
-    </p>
-    4:どうやって輪投げを入れれば有利になるか考えるため、頭の運動にもなる。
-        
 
-
-        <section id="rules">
-            <h2>ルールと遊び方</h2>
-            <ul>
-                <li><strong>参加人数:</strong> 1人以上（個人でもチームでもOK）</li>
-                <li><strong>用意するもの:</strong> 色で分けられた輪投げリング [10個以上]、輪投げを入れる棒[9本]</li>
-                <li><strong>得点ルール:</strong> 輪を投げてマスを埋め、ポイントが多い方が勝利！</li>
-                <li><strong>戦略性:</strong> 自分のマスを埋めるだけでなく、相手の戦略を妨害しよう！</li>
-            </ul>
-            
-            <p>
-                手前から1点、2点、3点。ビンゴのように一直線に並べると2倍ポイント！ポイント合計で勝負を決めます。
-            </p>
-            <ul>
-                <li><strong>1:キャプテンルール:</strong> キャプテンは相手と同じ場所に入れると自分のチームの色に変わります。。</li>
-                <li><strong>2:キャプテンルール:</strong> 同じ場所に入れて色が変わるのは、手前から、2個・3個・4個までです。</li>
-                <li><strong>制限時間:</strong> 2分30秒でゲーム終了。</li>
-            </ul>
-        </section>
-
-        <section id="gallery">
-            <h2>ギャラリー</h2>
-            <div class="gallery">
-                <div>
-                    <img src="img_0758.png" alt=>
-
-                    <p>楽しいゲームの様子</p>
-                </div>
-                <div>
-                    <img src="B3F87562-BDC6-40AB-A5A2-9E427DECFCBF.png" alt=>
-                    <p>輪投げのターゲット</p>
-                </div>
-                <div>
-                    <img src="img_0750.png" alt=>
-                    <p>イベント風景</p>
-                </div>
-            </div>
-        </section>
-        <style>
-            /* ギャラリー画像のスタイル */
-            .gallery img {
-                width: 100%;
-                max-width: 300px;
-                height: auto;
-                border-radius: 10px;
-                border: 3px solid #ffdab9;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-        
-            .gallery img:hover {
-                transform: scale(1.1);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            }
-        </style>
-        <!-- 既存のHTMLの後に以下を追加 -->
-<div id="modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-image">
-    <div id="caption"></div>
-</div>
-
-<style>
-    /* モーダルのスタイル */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    .modal-content {
-        margin: auto;
-        display: block;
-        max-width: 80%;
-        max-height: 80%;
-        border-radius: 10px;
-        animation: zoomIn 0.3s;
-    }
-
-    @keyframes zoomIn {
-        from {
-            transform: scale(0.7);
-        }
-        to {
-            transform: scale(1);
-        }
-    }
-
-    #caption {
-        margin: 15px auto;
-        text-align: center;
-        color: #ccc;
-        font-size: 1.2rem;
-    }
-
-    .close {
-        position: absolute;
-        top: 20px;
-        right: 35px;
-        color: #fff;
-        font-size: 30px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-</style>
-
-<script>
-    // JavaScript: モーダルの動作を実装
-    document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("modal");
-        const modalImg = document.getElementById("modal-image");
-        const captionText = document.getElementById("caption");
-        const closeBtn = document.querySelector(".close");
-        const galleryImages = document.querySelectorAll(".gallery img");
-
-        galleryImages.forEach(img => {
-            img.addEventListener("click", () => {
-                modal.style.display = "block";
-                modalImg.src = img.src;
-                captionText.innerHTML = img.alt;
-            });
-        });
-
-        closeBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    });
-</script>
-
-        
-
-
+  <div id="current-time-info" style="text-align: center; margin: 20px 0; font-size: 20px;">
+    <p id="current-time">現在の時間: --:--</p>
+    <p id="current-period">現在の授業: -</p>
+  </div>
+  <div class="extra-section">
+    <h2 class="extra-title">プロジェクトシート</h2>
+    <div class="worksheet-card">
+      <a href="https://docs.google.com/spreadsheets/d/1jgXhiN8HFjyJ-pgesb2G0_Y8xxZCoz0I5aWGLa6yYNs/edit?gid=1783021986#gid=1783021986" target="_blank">
+        プロジェクトシート
+      </a>
     </div>
+  </div>
 
-    <footer>
-        <p>© 2024 ゆるスポーツ「 ワナナナゲ 」  <a href="https://www.example.com">公式サイト</a></p>
-    </footer>
+  <div id="worksheet-links"></div>
+
+  <script>
+    const timetable = {
+      月: ["サークル活動", "サークル活動", "進路準備(1,2)", "昼休み", "リベラルアーツ基礎(人文科学)", "クリエイティブ検定", "一般教養英語"],
+      
+      火: ["リベラルアーツ応用", "リベラルアーツ応用", "キャンパス授業", "昼休み", "総合型選抜対策(応用)", "中国語初級", "中国語初級"],
+      
+      水: ["プロジェクトNα", "プロジェクトNβ", "総合型選抜対策(標準)", "昼休み", "リベラルアーツ基礎(社会科学)", "統計検定対策4級", "ゼミナール"],
+      
+      木: ["プロジェクトN基礎", "プロジェクトN基礎", "キャンパス授業", "昼休み", "アート・デザイン", "アート・デザイン", "コミュニティ活動"],
+      
+      金: ["プロジェクトNα", "プロジェクトNβ", "目標設定", "昼休み", "リベラルアーツ基礎(自然科学)", "英語検定対策2級", "キャンパス授業"]
+    };
+
+    const worksheets = [
+    { name: 'プロジェクトシート', url: 'https://docs.google.com/spreadsheets/d/1jgXhiN8HFjyJ-pgesb2G0_Y8xxZCoz0I5aWGLa6yYNs/edit?gid=1783021986#gid=1783021986' },
+
+{ name: '英語検定対策2級', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/NzIxMTMzOTQzNTcw' },
+
+{ name: '統計検定対策4級', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/NzE5NTYzODg1MjY4' },
+
+{ name: '目標設定', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc1NDAwMzMwNzA4' },
+
+{ name: 'コミュニティ活動', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/NjgyMjE1MDEzNDE5' },
+
+{ name: 'ゼミナール', url: 'https://classroom.google.com/c/NjU2MTczMTA5OTI5/a/NzMwMzcxOTQ2NjE1/details' },
+
+{ name: 'サークル活動', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/NjkyODQ3MTA0ODEy' },
+
+{ name: 'キャンパス授業', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/NjkyODQ2MDUyMDM5' },
+
+{ name: '進路準備(1,2)', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njg0MDQ2OTc0Nzcw' },
+
+{ name: '一般教養英語', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc5MzY5NTkzMDg4' },
+
+{ name: 'プロジェクトN基礎', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc2MDkxNDEzNjkz' },
+
+{ name: 'プロジェクトNα', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc1NjY5OTcwOTUw' },
+
+{ name: 'プロジェクトNβ', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc4NTI4ODA3OTIy' },
+
+{ name: 'リベラルアーツ基礎(自然科学)', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc4NDE2OTgxNDgy' },
+
+{ name: 'アート・デザイン', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc4NDE2ODk1MzY2' },
+
+{ name: 'リベラルアーツ基礎(社会科学)', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc4NDE2NzE1MTEx' },
+
+{ name: 'リベラルアーツ応用', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc4NDE2MTc1MzI4' },
+
+{ name: '総合型選抜対策(応用)', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc1Mzk4MzEyMjA4' },
+
+{ name: 'リベラルアーツ基礎(人文科学)', url: 'https://classroom.google.com/w/NjU2MTczMTA5OTI5/tc/Njc4MzYyNDM4MTEw' }
+];
+
+    const worksheetLinks = document.getElementById('worksheet-links');
+
+    for (const day in timetable) {
+      const daySection = document.createElement('div');
+      daySection.classList.add('day-section');
+
+      const dayTitle = document.createElement('h2');
+      dayTitle.classList.add('day-title');
+      dayTitle.textContent = `${day}曜日`;
+
+      daySection.appendChild(dayTitle);
+
+      timetable[day].forEach(subject => {
+        const worksheet = worksheets.find(w => w.name === subject);
+        if (worksheet) {
+          const card = document.createElement('div');
+          card.classList.add('worksheet-card');
+
+          const link = document.createElement('a');
+          link.href = worksheet.url;
+          link.textContent = worksheet.name;
+          link.target = '_blank';
+
+          card.appendChild(link);
+          daySection.appendChild(card);
+        }
+      });
+
+      worksheetLinks.appendChild(daySection);
+    }
+
+    const updateCurrentTimeInfo = () => {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const formattedTime = `${hours}:${minutes}`;
+
+      const nowInMinutes = now.getHours() * 60 + now.getMinutes();
+      const periods = [
+        { start: 9 * 60 + 45, end: 10 * 60 + 35 },
+        { start: 10 * 60 + 45, end: 11 * 60 + 35 },
+        { start: 11 * 60 + 45, end: 12 * 60 + 35 },
+        { start: 12 * 60 + 36, end: 13 * 60 + 14 },
+        { start: 13 * 60 + 15, end: 14 * 60 + 5 },
+        { start: 14 * 60 + 15, end: 15 * 60 + 5 },
+        { start: 15 * 60 + 15, end: 16 * 60 + 5 }
+      ];
+
+      const currentPeriodIndex = periods.findIndex(
+        period => nowInMinutes >= period.start && nowInMinutes < period.end
+      );
+
+      const currentDay = ["日", "月", "火", "水", "木", "金", "土"][now.getDay()];
+      const currentSubjects = currentPeriodIndex >= 0 && timetable[currentDay]
+        ? timetable[currentDay][currentPeriodIndex]
+        : null;
+
+      document.getElementById('current-time').textContent = `現在の時間: ${formattedTime}`;
+      document.getElementById('current-period').textContent = `現在の授業: ${currentSubjects || 'なし'}`;
+
+      document.querySelectorAll('.worksheet-card').forEach(card => {
+        card.classList.remove('highlight');
+      });
+
+      if (currentSubjects) {
+        const cards = document.querySelectorAll('.worksheet-card');
+        cards.forEach(card => {
+          const link = card.querySelector('a');
+          if (link && link.textContent === currentSubjects) {
+            card.classList.add('highlight');
+          }
+        });
+      }
+    };
+
+    setInterval(updateCurrentTimeInfo, 1000);
+    updateCurrentTimeInfo();
+  </script>
 </body>
 </html>
+
