@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゆるスポーツ「わなげ✖️まるばつゲーム」</title>
+    <style>
+        
+        /* 全体スタイル */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fffaf0;
+            color: #333;
+            line-height: 1.8;
+        }
+        header {
+            background: linear-gradient(45deg, #ffa07a, #ff6347);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 5px solid #ff4500;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        header .nickname {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            font-style: italic;
+            color: #ffd700;
+        }
+        nav {
+            background: #ff4500;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        section h2 {
+            font-size: 2rem;
+            color: #ff4500;
+            border-left: 8px solid #ff6347;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+        section p, section ul {
+            font-size: 1.1rem;
+            color: #444;
+        }
+        ul {
+            list-style-type: circle;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #ffdab9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gallery p {
+            color: #999;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #ff4500;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        .button:hover {
+            background: #ff6347;
+        }
+        footer {
+            background: linear-gradient(45deg, #ff6347, #ffa07a);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #fffacd;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ゆるスポーツ「わなげ✖️まるばつゲーム」</h1>
+        <p class="nickname">通称「ワナナナゲ」</p>
+        <p>みんなで楽しく遊べる、新しい遊びのカタチ！</p>
+    </header>
+    <nav>
+        <a href="#about">概要</a>
+        <a href="#arai">魅力</a>
+        <a href="#rules">ルール</a>
+        <a href="#gallery">ギャラリー</a>
+    </nav>
+    <div class="container">
+        <section id="about">
+            <h2>ワナナナゲの概要</h2>
+            <p>
+                <strong>「ワナナナゲ」</strong>は、伝統的な遊び「輪投げ」に戦略性を加えた新感覚スポーツ！
+                勝ち負けにこだわらず、笑顔が広がる瞬間を楽しむことが目的です。
+            </p>
+            <p>
+                相模原橋本キャンパスのグループCチームが考案した、輪投げ✖️まるばつゲームを融合したとっても面白いゲーム！  
+                チームで協力して頭を使い有利に戦って、勝利を掴み取ろう！
+            </p>
+            <p>簡単なルールと用具で、誰でもすぐに始められるこのスポーツは、親子や友達同士で遊ぶのにぴったり！</p>
+        </section>
+        
+        <section id="arai">
+            <h2>ワナナナゲの魅力</h2>
+            <p>
+                1:運動が苦手な人でも楽しく遊べるスポーツ！
+            </p>
+            2:誰でも簡単に作れて遊ぶことができる！
+        </p>
+        3:ルールがシンプルで分かりやすい！
+    </p>
+    4:どうやって輪投げを入れれば有利になるか考えるため、頭の運動にもなる。
+        
+
+
+        <section id="rules">
+            <h2>ルールと遊び方</h2>
+            <ul>
+                <li><strong>参加人数:</strong> 1人以上（個人でもチームでもOK）</li>
+                <li><strong>用意するもの:</strong> 色で分けられた輪投げリング [10個以上]、輪投げを入れる棒[9本]</li>
+                <li><strong>得点ルール:</strong> 輪を投げてマスを埋め、ポイントが多い方が勝利！</li>
+                <li><strong>戦略性:</strong> 自分のマスを埋めるだけでなく、相手の戦略を妨害しよう！</li>
+            </ul>
+            
+            <p>
+                手前から1点、2点、3点。ビンゴのように一直線に並べると2倍ポイント！ポイント合計で勝負を決めます。
+            </p>
+            <ul>
+                <li><strong>1:キャプテンルール:</strong> キャプテンは相手と同じ場所に入れると自分のチームの色に変わります。。</li>
+                <li><strong>2:キャプテンルール:</strong> 同じ場所に入れて色が変わるのは、手前から、2個・3個・4個までです。</li>
+                <li><strong>制限時間:</strong> 2分30秒でゲーム終了。</li>
+            </ul>
+        </section>
+
+        <section id="gallery">
+            <h2>ギャラリー</h2>
+            <div class="gallery">
+                <div>
+                    <img src="img_0758.png" alt=>
+
+                    <p>楽しいゲームの様子</p>
+                </div>
+                <div>
+                    <img src="B3F87562-BDC6-40AB-A5A2-9E427DECFCBF.png" alt=>
+                    <p>輪投げのターゲット</p>
+                </div>
+                <div>
+                    <img src="img_0750.png" alt=>
+                    <p>イベント風景</p>
+                </div>
+            </div>
+        </section>
+        <style>
+            /* ギャラリー画像のスタイル */
+            .gallery img {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                border-radius: 10px;
+                border: 3px solid #ffdab9;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        
+            .gallery img:hover {
+                transform: scale(1.1);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+        <!-- 既存のHTMLの後に以下を追加 -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-image">
+    <div id="caption"></div>
+</div>
+
+<style>
+    /* モーダルのスタイル */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 10px;
+        animation: zoomIn 0.3s;
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.7);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    #caption {
+        margin: 15px auto;
+        text-align: center;
+        color: #ccc;
+        font-size: 1.2rem;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    // JavaScript: モーダルの動作を実装
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modal-image");
+        const captionText = document.getElementById("caption");
+        const closeBtn = document.querySelector(".close");
+        const galleryImages = document.querySelectorAll(".gallery img");
+
+        galleryImages.forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                captionText.innerHTML = img.alt;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+</script>
+
+        
+
+
+    </div>
+
+    <footer>
+        <p>© 2024 ゆるスポーツ「 ワナナナゲ 」  <a href="https://www.example.com">公式サイト</a></p>
+    </footer>
+</body>
+</html>
